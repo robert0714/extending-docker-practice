@@ -12,10 +12,12 @@ echo "Robert TestInstalling Ansible..."
 
 wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
 rpm -ivh epel-release-7-8.noarch.rpm
+rm -rf epel-release-7-8.noarch.rpm
 yum -y install ansible
+yum -y install jq
 yum -y update
 
- sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
+sudo tee /etc/yum.repos.d/docker.repo <<-'EOF'
 [dockerrepo]
 name=Docker Repository
 baseurl=https://yum.dockerproject.org/repo/main/centos/7/
